@@ -2,3 +2,5 @@
 *.bak
 *.dat
 *.dir
+*.log
+*workinprogress*
