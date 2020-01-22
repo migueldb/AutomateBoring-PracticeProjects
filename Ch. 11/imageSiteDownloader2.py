@@ -6,9 +6,13 @@
 # folder.
 #
 # NOTE: This script uses Selenium, please read the installation instructions at:
-# https://selenium-python.readthedocs.io/installation.html
-# This code was tested with Firefox but other browsers can be used.  Please check
-# the selenium documentation on how to install the corresponding driver.
+#       https://selenium-python.readthedocs.io/installation.html
+#       This code was tested with Firefox but other browsers can be used.
+#       Please check the selenium documentation on how to install the
+#       corresponding driver.
+#       This script requres the Beautiful Soup 4 module to be installed.  See:
+#       https://pypi.org/project/beautifulsoup4/
+#       for more information
 #                     
 # See: https://developer.mozilla.org/en-US/docs/Learn/HTML/
 #      Forms/Sending_and_retrieving_form_data
@@ -33,7 +37,7 @@ url = website + '/search?q=' + searchQuery
 browser = webdriver.Firefox()
 browser.get(url)
 
-# Create the SOAP object and close browser
+# Create the SOUP object and close browser
 s = bs4.BeautifulSoup(browser.page_source, 'lxml')
 browser.quit()
 
@@ -67,7 +71,7 @@ else:
             r.raise_for_status()
         except:
             continue
-        # Create SOAP object
+        # Create SOUP object
         s = bs4.BeautifulSoup(r.text, 'lxml')
 
         # Create the search element for the image 

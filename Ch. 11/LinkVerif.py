@@ -1,6 +1,11 @@
 #! python3
 # Automate Boring Stuff Practice Project - Chapter 11
 # linkVerif.py - Downloads and verifies all the links in a given webpage
+#
+# NOTE: This script requres the Beautiful Soup 4 module to be installed.  See:
+#       https://pypi.org/project/beautifulsoup4/
+#       for more information
+
 
 import requests, bs4, pprint
 

@@ -6,7 +6,9 @@
 #                        text file.  Each cell will contain a separate line.
 #
 # NOTE: This script requries a text file saved in the working directory
-#
+#       This script requres OpenPyXl module installed.  See:
+#       https://pypi.org/project/openpyxl/
+#       for more information
 
 import os
 import openpyxl as o

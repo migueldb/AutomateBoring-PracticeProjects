@@ -5,6 +5,10 @@
 #
 # See: https://developer.mozilla.org/en-US/docs/Learn/HTML/
 #      Forms/Sending_and_retrieving_form_data
+#
+# NOTE: This script requres the Beautiful Soup 4 module to be installed.  See:
+#       https://pypi.org/project/beautifulsoup4/
+#       for more information
 
 import requests, os, bs4
 
@@ -16,20 +20,21 @@ searchQuery = 'parrots'
 # Concatenate website address and search term to complete the URL
 url = website + 'search'
 
-# This header is a standard Firefox webbrowser header, it helps with preventing the website
-# from identifying the scrip as an automatic scraping code and retunrning unusable responses
+# This header is a standard Firefox webbrowser header, it helps with preventing
+# the website from identifying the scrip as an automatic scraping code and
+# retunrning unusable responses
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) \
 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'}
 query = {'q':searchQuery}
 
-# Create the search query and check for status
+# Create the request object and check for status
 r = requests.get(url, params=query, headers=headers)
 r.raise_for_status()
 
 # Create a directory to store the images
 os.makedirs(searchQuery, exist_ok=True)
 
-# Create the SOAP object
+# Create the SOUP object
 s = bs4.BeautifulSoup(r.text, features='lxml')
 
 # Create the search element (images)
