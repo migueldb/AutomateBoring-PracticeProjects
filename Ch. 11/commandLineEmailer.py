@@ -1,13 +1,16 @@
 #! python3
-# Automate Boring Stuff Practice Project - Chapter 11
+# Automate Boring Stuff Practice Project - Chapter 16
 # commandLineEmailer.py -  takes an email address and string of text on the
 # command line and then, using Selenium, logs into your email account and sends
 # an email of the string to the provided address
 #
 # NOTE: This script uses Selenium, please read the installation instructions at:
-# https://selenium-python.readthedocs.io/installation.html
-# This code was tested with Firefox but other browsers can be used.  Please check
-# the selenium documentation on how to install the corresponding driver.
+#       https://selenium-python.readthedocs.io/installation.html
+#       This code was tested with Firefox but other browsers can be used.
+#       Please check the selenium documentation on how to install the
+#       corresponding driver.
+#       For safety, the getpass module is used to handle password entry.  User
+#       input is required
 #
 # USAGE: From comandLineEmailer.py directory type on the command prompt:
 # C:\path\to\python\py.exe commandLineEmailer.py <recipient's email> message
